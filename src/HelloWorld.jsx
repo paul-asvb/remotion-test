@@ -1,9 +1,9 @@
-import {interpolate, Sequence, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
-import {Title} from './HelloWorld/Title';
+import { interpolate, Sequence, useCurrentFrame, useVideoConfig } from 'remotion';
+import { Logo } from './HelloWorld/Logo';
+import { Subtitle } from './HelloWorld/Subtitle';
+import { Title } from './HelloWorld/Title';
 
-export const HelloWorld = ({titleText, titleColor}) => {
+export const HelloWorld = ({ titleText, titleColor }) => {
 	const frame = useCurrentFrame();
 	const videoConfig = useVideoConfig();
 
@@ -19,11 +19,8 @@ export const HelloWorld = ({titleText, titleColor}) => {
 	const transitionStart = 25;
 
 	return (
-		<div style={{flex: 1, backgroundColor: 'white'}}>
-			<div style={{opacity}}>
-				<Sequence from={0} durationInFrames={videoConfig.durationInFrames}>
-					<Logo transitionStart={transitionStart} />
-				</Sequence>
+		<div style={{ flex: 1, backgroundColor: 'white' }}>
+			<div style={{ opacity }}>
 				<Sequence from={transitionStart + 10} >
 					<Title titleText={titleText} titleColor={titleColor} />
 				</Sequence>
